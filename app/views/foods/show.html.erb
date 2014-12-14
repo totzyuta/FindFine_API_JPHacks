@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>title</title>
+</head>
+
+<body>
+<h3>List of The Food</h3>
+<% if params[:category]=="all" %>
+	<h4>- all -</h4>
+	<% @all_foods.each do |f| %>
+		<%= f.id %>
+		<%= f.name %>
+		<%= f.category %>
+		<br>
+	<% end %>
+<% else %>
+	<h4>- <%= @foods[0].category %> -</h4>
+	<% @foods.each do |f| %>
+		<%= f.id %>
+		<%= f.name %>
+		<br>
+	<% end %>
+<% end %>
+</body>
+
+</html>
